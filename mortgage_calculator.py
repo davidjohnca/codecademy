@@ -1,11 +1,11 @@
 # Class UserInput
 class UserInput:
 
-    # Method that takes in a float input and returns it
+    # Method that takes in a float value and returns it
     def get_float(prompt):
         return float(input(prompt))
 
-    # Method that takes in an integer input and returns it
+    # Method that takes in an integer value and returns it
     def get_int(prompt):
         return int(input(prompt))
 
@@ -32,7 +32,8 @@ class MortgageCalculator:
         self.interest_rate = UserInput.get_float("Enter the annual interest rate (%): ")
         self.years = UserInput.get_int("Enter the loan term in years: ")
     
-    # Method that launches the calculator and prompts the user for input
+    # Method that launches the calculator in the terminal
+    # It displays a summary in the end based on the user's input
     def run_calculator(self):
         self.get_user_input()
         monthly_payment = self.calculate_monthly_payment()
@@ -45,7 +46,7 @@ class MortgageCalculator:
         print(f"Total Payment: ${total_payment:.2f}")
         
 # Instance of the class MortgageCalculator
-# Instance variables set to 0 as they'll be replaced by the user's input
+# The instance variables are set to 0 as they'll be replaced by the user's input
 mortgage_calculator = MortgageCalculator(principal=0, interest_rate=0, years=0)
 # Launching the calculator
 mortgage_calculator.run_calculator()
